@@ -1,0 +1,36 @@
+{
+  "name": "@use-services/delayqueue",
+  "version": "1.3.2",
+  "keywords": [
+    "use-services",
+    "delayqueue"
+  ],
+  "author": "Sigoden Huang <sigoden@gmail.com> (https://sigoden.com/)",
+  "homepage": "https://github.com/sigoden/use-services-packages",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sigoden/use-services-packages.git",
+    "directory": "packages/delayqueue"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "jest",
+    "clean": "rimraf dist",
+    "build": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run -s clean && npm run -s build"
+  },
+  "dependencies": {
+    "@use-services/ioredis": "^1.3.2",
+    "lodash": "^4.17.21",
+    "p-limit": "^3",
+    "use-services": "^1.3.1"
+  }
+}
